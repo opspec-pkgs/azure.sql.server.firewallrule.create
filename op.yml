@@ -1,0 +1,51 @@
+name: github.com/opspec-pkgs/azure.sql.server.firewallrule.create
+description: creates an azure sql server firewall rule (if it doesn't already exist)
+inputs:
+  subscriptionId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of azure subscription
+  azureUsername:
+    string:
+      constraints: { format: email }
+      description: email address of azure account
+  azurePassword:
+    string:
+      constraints: { minLength: 1 }
+      description: password of azure account
+      isSecret: true
+  name:
+    string:
+      constraints: { minLength: 1 }
+      description: name of sql server firewall rule
+  server:
+    string:
+      constraints: { minLength: 1 }
+      description: name of azure sql server
+  resourceGroup:
+    string:
+      constraints: { minLength: 1 }
+      description: name of azure resource group
+  startIPAddress:
+    string:
+      description: start ip of firewall rule. must be IPv4 format. use '0.0.0.0' to represent all azure-internal ip addresses
+      default: '0.0.0.0'
+  endIPAddress:
+    string:
+      constraints: { minLength: 1 }
+      description: end ip of firewall rule. must be IPv4 format. use '0.0.0.0' to represent all azure-internal ip addresses
+      default: '0.0.0.0'
+run:
+  container:
+    image: { ref: 'azuresdk/azure-cli-python:0.2.10' }
+    cmd: [ /cmd.sh ]
+    files: { /cmd.sh }
+    envVars:
+      subscriptionId:
+      azureUsername:
+      azurePassword:
+      name:
+      server:
+      resourceGroup:
+      startIPAddress:
+      endIPAddress:
