@@ -28,12 +28,13 @@ inputs:
       description: name of azure resource group
   startIPAddress:
     string:
-      description: start ip of firewall rule. must be IPv4 format. use '0.0.0.0' to represent all azure-internal ip addresses
+      constraints: { format: ipv4 }
+      description: start ip of firewall rule. Use '0.0.0.0' to represent all azure-internal ip addresses
       default: '0.0.0.0'
   endIPAddress:
     string:
-      constraints: { minLength: 1 }
-      description: end ip of firewall rule. must be IPv4 format. use '0.0.0.0' to represent all azure-internal ip addresses
+      constraints: { format: ipv4 }
+      description: end ip of firewall rule. Use '0.0.0.0' to represent all azure-internal ip addresses
       default: '0.0.0.0'
 run:
   container:
