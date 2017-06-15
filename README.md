@@ -25,11 +25,15 @@ run:
     pkg: { ref: github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION }
     inputs: 
       subscriptionId:
-      azureUsername:
-      azurePassword:
+      loginId:
+      loginSecret:
       name:
       server:
       resourceGroup:
+      # begin optional args
       startIPAddress:
       endIPAddress:
+      loginTenantId:
+      loginType:
+      # end optional args
 ```
