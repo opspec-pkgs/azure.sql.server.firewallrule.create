@@ -20,22 +20,21 @@ opctl run github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION }
-    inputs: 
-      subscriptionId:
-      loginId:
-      loginSecret:
-      name:
-      server:
-      resourceGroup:
-      # begin optional args
-      startIPAddress:
-      endIPAddress:
-      loginTenantId:
-      loginType:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION }
+  inputs: 
+    subscriptionId:
+    loginId:
+    loginSecret:
+    name:
+    server:
+    resourceGroup:
+    # begin optional args
+    startIPAddress:
+    endIPAddress:
+    loginTenantId:
+    loginType:
+    # end optional args
 ```
 
 # Support
