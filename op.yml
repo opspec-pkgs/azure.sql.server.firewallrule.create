@@ -46,6 +46,7 @@ inputs:
       constraints: { enum: [user, sp]}
       description: type of login; 'user' (default) or 'sp' for service principal
       default: user
+version: 2.0.0
 run:
   container:
     image: { ref: 'azuresdk/azure-cli-python:0.2.10' }
