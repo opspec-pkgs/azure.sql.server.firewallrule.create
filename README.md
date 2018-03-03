@@ -1,44 +1,46 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/azure.sql.server.firewallrule.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.sql.server.firewallrule.create)
 
+<img src="icon.svg" alt="icon" height="100px">
+
 # Problem statement
 
 creates an azure sql server firewall rule (if it doesn't already exist)
 
+# Format
+
+this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
+
 # Example usage
 
-> note: in examples, VERSION represents a version of the
-> azure.sql.server.firewallrule.create pkg
-
-## install
+## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION
+opctl pkg install github.com/opspec-pkgs/azure.sql.server.firewallrule.create#2.0.0
 ```
 
-## run
+## Run
 
 ```
-opctl run github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION
+opctl run github.com/opspec-pkgs/azure.sql.server.firewallrule.create#2.0.0
 ```
 
-## compose
+## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/azure.sql.server.firewallrule.create#VERSION }
-  inputs: 
+  pkg: { ref: github.com/opspec-pkgs/azure.sql.server.firewallrule.create#2.0.0 }
+  inputs:
     subscriptionId:
     loginId:
     loginSecret:
     name:
     server:
     resourceGroup:
-    # begin optional args
+    # params w/ default
     startIPAddress:
     endIPAddress:
     loginTenantId:
     loginType:
-    # end optional args
 ```
 
 # Support
